@@ -8,7 +8,8 @@ Please remember to configure your API key in `src/config.py`.
 
 ## To Do
 
-- [ ] Add a new file to the project that contains tests written with `pytest`.
+- [x] Add a new file to the project that contains tests written with `pytest`.
+- [ ] Publish the script on PyPI.
 
 ## References
 
