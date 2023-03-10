@@ -20,8 +20,9 @@ async def test_generate_password_characters():
     assert any(char.isupper() for char in password)
 
 
+@pytest.mark.asyncio
 async def test_generate_password_invalid_length():
     # result = await asyncio.wait_for(generate_password(length=5), timeout=10)
-    result = generate_password(5)
+    result = await generate_password(5)
     assert isinstance(result, bool)
     assert result is False

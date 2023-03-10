@@ -1,5 +1,6 @@
+import asyncio
 import openai
-from . import config
+import src.config
 
 
 async def generate_password(length=10):
@@ -7,7 +8,7 @@ async def generate_password(length=10):
         print('Password length must be at least 6 characters')
         return False
 
-    openai.api_key = config.OPENAI_API_KEY
+    openai.api_key = src.config.OPENAI_API_KEY
 
     try:
         completion = openai.ChatCompletion.create(
@@ -28,5 +29,5 @@ async def generate_password(length=10):
 
 
 if __name__ == '__main__':
-    password = generate_password()
+    password = asyncio.run(generate_password(20))
     print(password)
